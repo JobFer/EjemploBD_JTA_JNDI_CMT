@@ -24,9 +24,11 @@ public class EJBSubordinado {
 //    @TransactionAttribute(value = TransactionAttributeType.NEVER)  //Tb se puede poner en la clase
 //    @TransactionAttribute(value = TransactionAttributeType.REQUIRED)    
     @TransactionAttribute(value = TransactionAttributeType.REQUIRES_NEW)
+//    @TransactionAttribute(value = TransactionAttributeType.MANDATORY)
     public void subordinado() {
+        
         System.out.println("*****************************  subordinado  *******************************");
-        em.persist(new Categoria("miCategoriaSubordinada"));
-//        em.persist(new Categoria(1));
+//        em.persist(new Categoria("miCategoriaSubordinada"));
+        em.persist(new Categoria(1));
     }
 }

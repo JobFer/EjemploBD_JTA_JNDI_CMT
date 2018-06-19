@@ -24,10 +24,15 @@ public class CategoriaFacade extends AbstractFacade<Categoria> {
     }
     
     public void crearCategoria(){
+        
         System.out.println("*****************************  principal  *******************************");
-        eJBSubordinado.subordinado();
+        try{
+            eJBSubordinado.subordinado();
+        }catch(Exception e){
+            System.out.println("Excepcion en principal: " + e);
+        }
         em.persist(new Categoria("miCategoria"));
-//        em.persist(new Categoria(1)); //Esto para provocar excepcion y ROLLBACK
+//        em.persist(new Categoria(1)); //Esto para provocar excepcion y ROLLBACK        
     }
 
     public CategoriaFacade() {
